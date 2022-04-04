@@ -2,6 +2,8 @@ package servlet;
 
 import java.io.IOException;
 import java.util.ArrayList;
+
+import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
@@ -30,10 +32,11 @@ public class ListaProduto extends HttpServlet {
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
 		ProdutoDAO p = new ProdutoDAO();
+		ArrayList<Produto> listaProducts = p.getProdutos();
 		
-		request.setAttribute("lista", p.getProdutos());	
-	
+		request.setAttribute("lista", listaProducts);
 		request.getRequestDispatcher("/ListaProduto.jsp").forward(request, response);
+		
 	}
 
 	/**
