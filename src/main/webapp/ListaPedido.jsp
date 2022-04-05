@@ -1,7 +1,7 @@
 <%@page import="java.util.ArrayList"%> <%@page import="VO.Pedido"%> <%@page
 import="DAO.PedidoDAO"%> <%@ page language="java" contentType="text/html;
 charset=ISO-8859-1" pageEncoding="ISO-8859-1"%> <%@ taglib
-uri='http://java.sun.com/jsp/jstl/core' prefix='c'%>
+uri='http://java.sun.com/jstl/core' prefix='c'%>
 <!DOCTYPE html>
 <html>
     <head>
@@ -36,10 +36,18 @@ uri='http://java.sun.com/jsp/jstl/core' prefix='c'%>
                 </tr>
                 <c:forEach var="item" items="${lista}" varStatus="contador">
                     <tr>
-                        <td><c:out value="${item.codigo}" /></td>
-                        <td><c:out value="${item.cliente}" /></td>
-                        <td><c:out value="${item.vendedor}" /></td>
-                        <td><c:out value="${item.produto}" /></td>
+                        <td>
+                        	<c:out value="${item.codigoPedido}" />
+                        </td>
+                        <td>
+                        	<c:out value="${item.cliente.nome}" />
+                        </td>
+                        <td>
+                        	<c:out value="${item.vendedor.nome}" />
+                        </td>
+                        <td>
+                        	<c:out value="${item.produto.nome}" />
+                        </td>
                     </tr>
                 </c:forEach>
             </table>

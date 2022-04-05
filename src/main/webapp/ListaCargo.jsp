@@ -34,12 +34,21 @@ prefix="c" %>
                     <th>Observação</th>
                     <th>Ativo</th>
                 </tr>
+                
                 <c:forEach var="item" items="${lista}" varStatus="contador">
                     <tr>
-                        <td><c:out value="${item.codigo}" /></td>
-                        <td><c:out value="${item.nome}" /></td>
-                        <td><c:out value="${item.observacao}" /></td>
-                        <td><c:out value="${item.Ativo}" /></td>
+                        <td>
+                        	<c:out value="${item.codigo}" />
+                        </td>
+                        <td>
+                        	<c:out value="${item.nome}" />
+                        </td>
+                        <td>
+                        	<c:out value="${item.observacao}" />
+                        </td>
+                        <td>
+                        	<c:out value="${item.ativo}" />
+                        </td>
                     </tr>
                 </c:forEach>
             </table>

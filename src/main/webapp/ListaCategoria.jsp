@@ -33,11 +33,18 @@ prefix="c" %>
                     <th>Nome</th>
                     <th>Descrição</th>
                 </tr>
-                <c:forEach var="itemCat" items="${lista}" varStatus="contador">
+
+                <c:forEach var="item" items="${lista}" varStatus="contador">
                     <tr>
-                        <td><c:out value="${itemCat.codigo}" /></td>
-                        <td><c:out value="${itemCat.nome}" /></td>
-                        <td><c:out value="${itemCat.descricao}" /></td>
+                        <td>
+                        	<c:out value="${item.codigo}" />
+                        </td>
+                        <td>
+                        	<c:out value="${item.nome}" />
+                        </td>
+                        <td>
+                        	<c:out value="${item.descricao}" />
+                        </td>
                     </tr>
                 </c:forEach>
             </table>

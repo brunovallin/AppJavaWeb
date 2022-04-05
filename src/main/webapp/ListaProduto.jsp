@@ -1,7 +1,7 @@
-<%@page import="java.util.ArrayList"%> <%@page import="VO.Produto"%> <%@page
-import="DAO.ProdutoDAO"%> <%@ page language="java" contentType="text/html;
+<%@page import="java.util.ArrayList"%> <%@page import="VO.Produto"%> <%@ page 
+language="java" contentType="text/html;
 charset=ISO-8859-1" pageEncoding="ISO-8859-1"%> <%@ taglib
-uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
+uri="http://java.sun.com/jstl/core" prefix="c"%>
 <!DOCTYPE html>
 <html>
     <head>
@@ -39,15 +39,35 @@ uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
                     <td>Ativo</td>
                 </tr>
 
-                <c:forEach items="${lista}" var="product" varStatus="status">
+                <c:forEach var="item" items="${lista}"  varStatus="contador">
                     <tr>
-                        <td>${product['codigo']}</td>
-                        <td>${product['nome']}</td>
-                        <td>${product['descricao']}</td>
-                        <td>${product['ean']}</td>
-                        <td>${product['categoria']}</td>
-                        <td>${product['preco']}</td>
-                        <td>${product['ativo']}</td>
+                        <td>
+                        	<c:out value="${item.codigo}"></c:out>
+                        </td>
+                        
+                        <td>
+                        	<c:out value="${item.nome}"></c:out>
+                        </td>
+                        
+                        <td>
+                        	<c:out value="${item.descricao}"></c:out>
+                        </td>
+                        
+                        <td>
+                        	<c:out value="${item.ean}"></c:out>
+                        </td>
+                        
+                        <td>
+                        	<c:out value="${item.categoria}"></c:out>
+                        </td>
+                        
+                        <td>
+                        	<c:out value="${item.preco}"></c:out>
+                        </td>
+                        
+                        <td>
+                        	<c:out value="${item.ativo}"></c:out>
+                        </td>
                     </tr>
                 </c:forEach>
             </table>

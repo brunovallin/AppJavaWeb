@@ -4,25 +4,32 @@ import java.util.ArrayList;
 import VO.Categoria;
 
 public class CategoriaDAO {
-	public ArrayList<Categoria> getCategoria()
+	public ArrayList<Categoria> getCategorias()
 	{
-		ArrayList<Categoria> lstCat = new ArrayList<Categoria>();
-		Categoria c = new Categoria();
-		c.setCodigo(1);
-		c.setNome("Higiene");
-		c.setDescricao("Higiene Pessoal");
-		lstCat.add(c);
-		c = new Categoria();
-		c.setCodigo(2);
-		c.setNome("HortiFruti");
-		c.setDescricao("Hortifruti em geral");
-		lstCat.add(c);
-		c = new Categoria();
-		c.setCodigo(3);
-		c.setNome("Açougue");
-		c.setDescricao("Carnes em geral");
-		lstCat.add(c);
+		ArrayList<Categoria> categorias = new ArrayList<Categoria>();
+		Categoria categoriaOne = new Categoria();
 		
-		return lstCat;
+		categoriaOne.setCodigo(1);
+		categoriaOne.setNome("Higiene");
+		categoriaOne.setDescricao("Higiene Pessoal");
+		
+		categorias.add(categoriaOne);
+		
+		Categoria categoriaTwo = new Categoria();
+		
+		categoriaTwo.setCodigo(2);
+		categoriaTwo.setNome("HortiFruti");
+		categoriaTwo.setDescricao("Hortifruti em geral");
+		categorias.add(categoriaTwo);
+		
+		Categoria categoriaThree = new Categoria();
+		
+		categoriaThree.setCodigo(3);
+		categoriaThree.setNome("Açougue");
+		categoriaThree.setDescricao("Carnes em geral");
+		
+		categorias.add(categoriaThree);
+		
+		return categorias;
 	}
 }
