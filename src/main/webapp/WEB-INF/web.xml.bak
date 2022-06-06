@@ -87,8 +87,8 @@
   	<url-pattern>/CadastroCategoria</url-pattern>
   </servlet-mapping>
   <servlet-mapping>
-  	<servlet-name>ListaCategoria</servlet-name>
-  	<url-pattern>/ListaCategoria</url-pattern>
+  	<servlet-name>LIstaCategoria</servlet-name>
+  	<url-pattern>/LIstaCategoria</url-pattern>
   </servlet-mapping>
   <servlet-mapping>
   	<servlet-name>CadastroCliente</servlet-name>

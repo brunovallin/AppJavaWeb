@@ -8,12 +8,11 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-
 import DAO.CategoriaDAO;
 import VO.Categoria;
 
 /**
- * Servlet implementation class ListaCategoria
+ * Servlet implementation class LIstaCategoria
  */
 public class ListaCategoria extends HttpServlet {
 	private static final long serialVersionUID = 1L;
@@ -29,12 +28,14 @@ public class ListaCategoria extends HttpServlet {
 	/**
 	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
 	 */
-	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		// TODO Auto-generated method stub
-		CategoriaDAO categoriaDAO = new CategoriaDAO();
-		ArrayList<Categoria> categorias = categoriaDAO.getCategorias();
+	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {	
+		try {
+			request.setAttribute("lista", new CategoriaDAO().getCategorias());
+		}
+		catch (Exception e) {
+			throw new ServletException(e.getMessage());
+		}
 		
-		request.setAttribute("lista", categorias);
 		request.getRequestDispatcher("/ListaCategoria.jsp").forward(request, response);
 	}
 
@@ -45,5 +46,4 @@ public class ListaCategoria extends HttpServlet {
 		// TODO Auto-generated method stub
 		doGet(request, response);
 	}
-
 }

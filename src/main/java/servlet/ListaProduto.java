@@ -31,11 +31,12 @@ public class ListaProduto extends HttpServlet {
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
-		ProdutoDAO produtoDAO = new ProdutoDAO();
-		ArrayList<Produto> produtos = produtoDAO.getProdutos();
+		ProdutoDAO p = new ProdutoDAO();
+		ArrayList<Produto> listaProducts = p.getProdutos();
 		
-		request.setAttribute("lista", produtos);
+		request.setAttribute("lista", listaProducts);
 		request.getRequestDispatcher("/ListaProduto.jsp").forward(request, response);
+		
 	}
 
 	/**
