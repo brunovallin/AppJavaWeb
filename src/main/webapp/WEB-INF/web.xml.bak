@@ -30,7 +30,7 @@
   </servlet>
   <servlet>
   	<servlet-name>ListaCategoria</servlet-name>
-  	<display-name>ListaCategoria</display-name>
+  	<display-name>LIstaCategoria</display-name>
   	<description></description>
   	<servlet-class>servlet.ListaCategoria</servlet-class>
   </servlet>

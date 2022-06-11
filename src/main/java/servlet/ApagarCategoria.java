@@ -1,25 +1,25 @@
 package servlet;
 
 import java.io.IOException;
-import java.util.ArrayList;
+import java.io.PrintWriter;
+
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-import DAO.ProdutoDAO;
-import VO.*;
-
+import VO.Categoria;
+import DAO.CategoriaDAO;
 /**
- * Servlet implementation class ListaCadastro
+ * Servlet implementation class ApagarCategoria
  */
-public class ListaProduto extends HttpServlet {
+public class ApagarCategoria extends HttpServlet {
 	private static final long serialVersionUID = 1L;
        
     /**
      * @see HttpServlet#HttpServlet()
      */
-    public ListaProduto() {
+    public ApagarCategoria() {
         super();
         // TODO Auto-generated constructor stub
     }
@@ -29,11 +29,22 @@ public class ListaProduto extends HttpServlet {
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
-		ProdutoDAO p = new ProdutoDAO();
+		PrintWriter out = response.getWriter();
+	    try {
+	    	Categoria vo = new Categoria();	    
+		    vo.setId(Integer.parseInt(request.getParameter("id")));	   
+		    CategoriaDAO dao= new CategoriaDAO(vo);
+			dao.delete();
+			response.setContentType("text/html");
+			out.println("Registro Excluido Sucesso");
+			
+			out.println("<a href='ListaCategoria'>Voltar</a>");
+			out.close();
+		} catch (Exception e) {
+			out.print(e.getMessage());
+			
+		}
 		
-		request.setAttribute("lista", p.getProdutos());	
-	
-		request.getRequestDispatcher("/ListaProduto.jsp").forward(request, response);
 	}
 
 	/**
@@ -43,4 +54,5 @@ public class ListaProduto extends HttpServlet {
 		// TODO Auto-generated method stub
 		doGet(request, response);
 	}
+
 }

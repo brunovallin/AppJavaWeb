@@ -21,7 +21,8 @@ public class BaseDAO {
     }
 
     public  void fechar() throws Exception {
-        this.getConn().close();        
+    	if(!this.getConn().isClosed())
+    		this.getConn().close();        
     }
        
 }

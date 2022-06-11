@@ -9,18 +9,22 @@ public class ProdutoDAO {
 		Produto p= new Produto();
 		p.setCodigo(0);
 		p.setNome("Teste 1");
+		
 		lst.add(p);
 		Produto p2= new Produto();
 		p2.setCodigo(1);
 		p2.setNome("Teste 2");
+
 		lst.add(p2);
 		Produto p3= new Produto();
 		p3.setCodigo(2);
 		p3.setNome("Teste 3");
+
 		lst.add(p3);
 		Produto p4= new Produto();
 		p4.setCodigo(3);
 		p4.setNome("Teste Prod 4");
+
 		lst.add(p4);
 		return lst;
 	}
@@ -30,6 +34,7 @@ public class ProdutoDAO {
 		Produto p= new Produto();
 		p.setCodigo(0);
 		p.setNome("Teste 1");
+		
 		lst.add(p);		
 		return lst;
 	}

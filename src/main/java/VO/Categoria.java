@@ -2,18 +2,18 @@ package VO;
 
 public class Categoria {
 	
-	private int codigo;
+	private int id;
 	
 	private String nome;
 	
 	private String descricao;
 	
-	public int getCodigo() {
-		return codigo;
+	public int getId() {
+		return id;
 	}
 	
-	public void setCodigo(int codigo) {
-		this.codigo = codigo;
+	public void setId(int id) {
+		this.id = id;
 	}
 	
 	public String getNome() {

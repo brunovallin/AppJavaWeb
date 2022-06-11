@@ -1,25 +1,21 @@
 package servlet;
 
 import java.io.IOException;
-import java.util.ArrayList;
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-import DAO.ProdutoDAO;
-import VO.*;
-
 /**
- * Servlet implementation class ListaCadastro
+ * Servlet implementation class Index
  */
-public class ListaProduto extends HttpServlet {
+public class Home extends HttpServlet {
 	private static final long serialVersionUID = 1L;
        
     /**
      * @see HttpServlet#HttpServlet()
      */
-    public ListaProduto() {
+    public Home() {
         super();
         // TODO Auto-generated constructor stub
     }
@@ -29,11 +25,8 @@ public class ListaProduto extends HttpServlet {
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
-		ProdutoDAO p = new ProdutoDAO();
+		request.getRequestDispatcher("/Home.jsp").forward(request, response);
 		
-		request.setAttribute("lista", p.getProdutos());	
-	
-		request.getRequestDispatcher("/ListaProduto.jsp").forward(request, response);
 	}
 
 	/**
@@ -41,6 +34,8 @@ public class ListaProduto extends HttpServlet {
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
+		
 		doGet(request, response);
 	}
+
 }

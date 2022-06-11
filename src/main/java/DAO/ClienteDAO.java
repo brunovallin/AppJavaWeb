@@ -11,20 +11,4 @@ public class ClienteDAO {
 		
 		return c;
 	}
-	
-	public void save(Cliente cliente) {
-		
-	}
-	
-	public void edit(Cliente cliente) {
-		
-	}
-	
-	public void delete(int id) {
-		
-	}
-	
-	public void load() {
-		
-	}
 }
