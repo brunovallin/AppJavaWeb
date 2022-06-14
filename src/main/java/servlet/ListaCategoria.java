@@ -17,7 +17,7 @@ import VO.Categoria;
  */
 public class ListaCategoria extends HttpServlet {
 	private static final long serialVersionUID = 1L;
-       
+    private String nome;
     /**
      * @see HttpServlet#HttpServlet()
      */
@@ -32,8 +32,14 @@ public class ListaCategoria extends HttpServlet {
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {	
 		CategoriaDAO dao = new CategoriaDAO();
 		PrintWriter out = response.getWriter();
-		try {	
-		request.setAttribute("listaCat", dao.getCategorias());		
+		nome = request.getParameter("nome");
+		try {
+		if( nome == null || nome.isEmpty()) {
+			request.setAttribute("listaCat", dao.getCategorias());
+		}
+		else {
+			request.setAttribute("listaCat", dao.findCategorias(nome));	
+		}
 		request.getRequestDispatcher("/ListaCategoria.jsp").forward(request, response);
 		}catch (Exception e) {
 			out.print(e.getMessage());
@@ -44,7 +50,7 @@ public class ListaCategoria extends HttpServlet {
 	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		// TODO Auto-generated method stub
+		
 		doGet(request, response);
 	}
 }

@@ -47,7 +47,7 @@ public class CategoriaDAO extends BaseDAO implements IDao {
 		ArrayList <Categoria> lst = new ArrayList();
 		String sql = "SELECT id,nome, descricao FROM Categoria where nome like ?";
 		PreparedStatement preparedStmt = getConn().prepareStatement(sql);
-		preparedStmt.setString (1, nome+'%');  
+		preparedStmt.setString (1, "%".concat(nome).concat("%"));  
 		ResultSet rs =   preparedStmt.executeQuery();
 		while (rs.next()) { 
 			Categoria p= new Categoria();
