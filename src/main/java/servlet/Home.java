@@ -6,19 +6,16 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-import DAO.ClienteDAO;
-import DAO.ColaboradorDAO;
-
 /**
- * Servlet implementation class ListaColaborador
+ * Servlet implementation class Index
  */
-public class ListaColaborador extends HttpServlet {
+public class Home extends HttpServlet {
 	private static final long serialVersionUID = 1L;
        
     /**
      * @see HttpServlet#HttpServlet()
      */
-    public ListaColaborador() {
+    public Home() {
         super();
         // TODO Auto-generated constructor stub
     }
@@ -28,11 +25,8 @@ public class ListaColaborador extends HttpServlet {
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
-		ColaboradorDAO c = new ColaboradorDAO();
+		request.getRequestDispatcher("/Home.jsp").forward(request, response);
 		
-		request.setAttribute("lista", c.getColaboradores());	
-	
-		request.getRequestDispatcher("/ListaCliente.jsp").forward(request, response);		
 	}
 
 	/**
@@ -40,6 +34,7 @@ public class ListaColaborador extends HttpServlet {
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
+		
 		doGet(request, response);
 	}
 

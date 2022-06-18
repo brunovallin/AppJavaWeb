@@ -1,15 +1,12 @@
 package servlet;
 
 import java.io.IOException;
-import java.util.ArrayList;
-
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import DAO.CargoDAO;
-import VO.Cargo;
 
 /**
  * Servlet implementation class ListaCargo
@@ -29,10 +26,9 @@ public class ListaCargo extends HttpServlet {
 	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		CargoDAO cargoDAO = new CargoDAO();
-		ArrayList<Cargo> cargos = cargoDAO.getCargos();
+		CargoDAO c = new CargoDAO();
 		
-		request.setAttribute("lista", cargos);
+		request.setAttribute("lista", c.getCargos());
 		request.getRequestDispatcher("/ListaCargo.jsp").forward(request, response);
 	}
 

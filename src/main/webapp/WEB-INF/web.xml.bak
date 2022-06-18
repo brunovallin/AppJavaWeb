@@ -30,21 +30,9 @@
   </servlet>
   <servlet>
   	<servlet-name>ListaCategoria</servlet-name>
-  	<display-name>ListaCategoria</display-name>
+  	<display-name>LIstaCategoria</display-name>
   	<description></description>
   	<servlet-class>servlet.ListaCategoria</servlet-class>
-  </servlet>
-  <servlet>
-  	<servlet-name>EditarCategoria</servlet-name>
-  	<display-name>EditarCategoria</display-name>
-  	<description></description>
-  	<servlet-class>servlet.EditarCategoria</servlet-class>
-  </servlet>
-  <servlet>
-  	<servlet-name>ApagarCategoria</servlet-name>
-  	<display-name>ApagarCategoria</display-name>
-  	<description></description>
-  	<servlet-class>servlet.ApagarCategoria</servlet-class>
   </servlet>
   <servlet>
   	<servlet-name>CadastroCliente</servlet-name>
@@ -82,11 +70,6 @@
   	<description></description>
   	<servlet-class>servlet.ListaCargo</servlet-class>
   </servlet>
-  <servlet>
-  	<servlet-name>Home</servlet-name>
-  	<display-name>Home</display-name>
-  	<servlet-class>servlet.Home</servlet-class>
-  </servlet>
   <servlet-mapping>
   	<servlet-name>CadastroProduto</servlet-name>
   	<url-pattern>/CadastroProduto</url-pattern>
@@ -104,16 +87,8 @@
   	<url-pattern>/CadastroCategoria</url-pattern>
   </servlet-mapping>
   <servlet-mapping>
-  	<servlet-name>ListaCategoria</servlet-name>
-  	<url-pattern>/ListaCategoria</url-pattern>
-  </servlet-mapping>
-  <servlet-mapping>
-  	<servlet-name>EditarCategoria</servlet-name>
-  	<url-pattern>/EditarCategoria</url-pattern>
-  </servlet-mapping>
-  <servlet-mapping>
-  	<servlet-name>ApagarCategoria</servlet-name>
-  	<url-pattern>/ApagarCategoria</url-pattern>
+  	<servlet-name>LIstaCategoria</servlet-name>
+  	<url-pattern>/LIstaCategoria</url-pattern>
   </servlet-mapping>
   <servlet-mapping>
   	<servlet-name>CadastroCliente</servlet-name>
@@ -139,10 +114,6 @@
   	<servlet-name>ListaCargo</servlet-name>
   	<url-pattern>/ListaCargo</url-pattern>
   </servlet-mapping>
-  <servlet-mapping>
-  	<servlet-name>Home</servlet-name>
-  	<url-pattern>/Home</url-pattern>
-  </servlet-mapping>
-
-
+  
+  
 </web-app>
