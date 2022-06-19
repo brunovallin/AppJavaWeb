@@ -3,11 +3,11 @@ package VO;
 public class Pedido {
 	private int codigoPedido;
 	
-	private Cliente cliente;
+	private Integer cliente;
 	
-	private Colaborador vendedor;
+	private Integer vendedor;
 	
-	private Produto produto;
+	private Integer produto;
 	
 	public int getCodigoPedido() {
 		return codigoPedido;
@@ -15,22 +15,22 @@ public class Pedido {
 	public void setCodigoPedido(int codigoPedido) {
 		this.codigoPedido = codigoPedido;
 	}
-	public Cliente getCliente() {
+	public Integer getCliente() {
 		return cliente;
 	}
-	public void setCliente(Cliente cliente) {
+	public void setCliente(Integer cliente) {
 		this.cliente = cliente;
 	}
-	public Colaborador getVendedor() {
+	public Integer getVendedor() {
 		return vendedor;
 	}
-	public void setVendedor(Colaborador vendedor) {
+	public void setVendedor(Integer vendedor) {
 		this.vendedor = vendedor;
 	}
-	public Produto getProduto() {
+	public Integer getProduto() {
 		return produto;
 	}
-	public void setProduto(Produto produto) {
+	public void setProduto(Integer produto) {
 		this.produto = produto;
 	}
 }
