@@ -85,6 +85,8 @@
 								<label class="input-group-text" for="name"><i class="bi bi-file-text-fill"></i></label> 
 								<input class="form-control" type="text" name="cidade" id="cidade" placeholder="Cidade"value="<c:out value='${vo.cidade}'/>" /> 
 							</div>
+							
+							<input type="hidden" name="ativo" id="ativo" value="<c:out value='${vo.ativo}'/>">
 						</div>
 						
 						<div class="d-flex justify-content-end mb-3 me-4">
