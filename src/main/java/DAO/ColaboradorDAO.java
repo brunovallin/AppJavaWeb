@@ -46,6 +46,8 @@ public class ColaboradorDAO extends BaseDAO implements IDao {
 		s.close();
 		rs.close();		
 		fechar();
+		
+		System.out.println("megnow started insert" + lst);
 		return lst;
 	}
 	
