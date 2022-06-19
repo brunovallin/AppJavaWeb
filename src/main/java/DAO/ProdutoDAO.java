@@ -39,7 +39,7 @@ public class ProdutoDAO extends BaseDAO implements IDao {
 			produto.setEan(Integer.parseInt(rs.getString(4)));
 			produto.setCategoria(rs.getString(5));
 			produto.setPreco(Double.parseDouble(rs.getString(6)));
-			produto.setAtivo(Boolean.parseBoolean(rs.getString(7)));
+			produto.setAtivo(rs.getBoolean(7));
 			lst.add(produto);
 		}
 		s.close();
