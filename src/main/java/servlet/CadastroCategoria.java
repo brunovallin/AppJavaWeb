@@ -35,7 +35,6 @@ public class CadastroCategoria extends HttpServlet {
 		vo.setNome(request.getParameter("nome"));
 		vo.setDescricao(request.getParameter("descricao"));
 		request.getRequestDispatcher(request.getServletPath().concat(".jsp")).forward(request, response);
-		
 	}
 
 	/**
@@ -63,8 +62,7 @@ public class CadastroCategoria extends HttpServlet {
 		} catch (Exception e) {
 			// TODO Auto-generated catch block
 			out.println(e);
-		}
-		
+		}	
 	}
 
 }

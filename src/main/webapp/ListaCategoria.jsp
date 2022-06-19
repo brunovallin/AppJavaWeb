@@ -52,6 +52,7 @@
 		<h1 class="card-title"style="color: white">Lista de Categoria</h1>
 		<a class="btn btn-info" href="CadastroCategoria"><i class="bi bi-plus-square-fill"></i>   Cadastrar</a>
 	</div>
+	
 	<div class="card-body">
 		<div class="table-responsive">
 		<table class="table table-fixed" style="color: white">
@@ -85,5 +86,6 @@
 		</div>
 		</div>
 	</div>
+	
 </body>
 </html>

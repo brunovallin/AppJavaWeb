@@ -66,7 +66,8 @@ public class CategoriaDAO extends BaseDAO implements IDao {
 	@Override
 	public void save() {
 		try {
-			abrir();		
+			System.out.println("megnow started insert ");
+			abrir();
 			String query = " insert into Categoria (nome,descricao)"
 					+ " values (?, ?)";
 			PreparedStatement preparedStmt = getConn().prepareStatement(query);
@@ -74,7 +75,9 @@ public class CategoriaDAO extends BaseDAO implements IDao {
 			preparedStmt.setString (2, this.vo.getDescricao());
 			preparedStmt.execute();
 			fechar();
+			System.out.println("megnow stoped insert ");
 		} catch (SQLException e) {
+			System.out.println("megnow" + e.getMessage());
 		} catch (Exception e) {
 		}
 	}
