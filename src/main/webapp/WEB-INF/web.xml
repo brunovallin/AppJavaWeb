@@ -129,6 +129,12 @@
   	<description></description>
   	<servlet-class>servlet.ApagarProduto</servlet-class>
   </servlet>
+  <servlet>
+  	<servlet-name>EditarProduto</servlet-name>
+  	<display-name>EditarProduto</display-name>
+  	<description></description>
+  	<servlet-class>servlet.EditarProduto</servlet-class>
+  </servlet>
   <servlet-mapping>
   	<servlet-name>CadastroProduto</servlet-name>
   	<url-pattern>/CadastroProduto</url-pattern>
@@ -212,6 +218,10 @@
   <servlet-mapping>
   	<servlet-name>ApagarProduto</servlet-name>
   	<url-pattern>/ApagarProduto</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+  	<servlet-name>EditarProduto</servlet-name>
+  	<url-pattern>/EditarProduto</url-pattern>
   </servlet-mapping>
 
 

@@ -8,21 +8,21 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-
+import DAO.CargoDAO;
 import DAO.ProdutoDAO;
-
+import VO.Cargo;
 import VO.Produto;
 
 /**
- * Servlet implementation class ApagarProduto
+ * Servlet implementation class EditarProduto
  */
-public class ApagarProduto extends HttpServlet {
+public class EditarProduto extends HttpServlet {
 	private static final long serialVersionUID = 1L;
        
     /**
      * @see HttpServlet#HttpServlet()
      */
-    public ApagarProduto() {
+    public EditarProduto() {
         super();
         // TODO Auto-generated constructor stub
     }
@@ -33,19 +33,17 @@ public class ApagarProduto extends HttpServlet {
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
 		PrintWriter out = response.getWriter();
-	    try {
-	    	Produto vo = new Produto();	    
-		    vo.setCodigo(Integer.parseInt(request.getParameter("codigo")));
-		    ProdutoDAO dao= new ProdutoDAO(vo);
-			dao.delete();
-			response.setContentType("text/html");
-			out.println("Registro Excluido Sucesso");
-			
-			out.println("<a href='ListaProduto'>Voltar</a>");
-			out.close();
+		Produto vo = new Produto();
+		try {
+			vo.setCodigo(Integer.parseInt(request.getParameter("codigo")));
+			ProdutoDAO dao = new ProdutoDAO(vo);
+			dao.load();
+			request.setAttribute("vo", dao.getVo());
+			request.getRequestDispatcher("/CadastroProduto.jsp").forward(request, response);
+
 		} catch (Exception e) {
-			out.print(e.getMessage());
-			
+			// TODO Auto-generated catch block
+			out.println(e.getMessage());
 		}
 	}
 

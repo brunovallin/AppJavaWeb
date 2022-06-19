@@ -36,7 +36,7 @@ public class ProdutoDAO extends BaseDAO implements IDao {
 			produto.setCodigo(rs.getInt(1));
 			produto.setNome(rs.getString(2));
 			produto.setDescricao(rs.getString(3));
-			produto.setEan(Integer.parseInt(rs.getString(4)));
+			produto.setEan(Long.parseLong(rs.getString(4)));
 			produto.setCategoria(rs.getString(5));
 			produto.setPreco(Double.parseDouble(rs.getString(6)));
 			produto.setAtivo(rs.getBoolean(7));
@@ -61,7 +61,7 @@ public class ProdutoDAO extends BaseDAO implements IDao {
 			produto.setCodigo(rs.getInt(1));
 			produto.setNome(rs.getString(2));
 			produto.setDescricao(rs.getString(3));
-			produto.setEan(Integer.parseInt(rs.getString(4)));
+			produto.setEan(Long.parseLong(rs.getString(4)));
 			produto.setCategoria(rs.getString(5));
 			produto.setPreco(Double.parseDouble(rs.getString(6)));
 			produto.setAtivo(Boolean.parseBoolean(rs.getString(7)));
@@ -93,8 +93,10 @@ public class ProdutoDAO extends BaseDAO implements IDao {
 		} catch (SQLException e) {
 			System.out.println("megnow" + e.getMessage());
 		} catch (Exception e) {
+			System.out.println("megnow EXCEPTION" + e.getMessage());
 		}
 	}
+
 
 	@Override
 	public void load() {
@@ -151,7 +153,7 @@ public class ProdutoDAO extends BaseDAO implements IDao {
 		try {
 			abrir();
 
-			String query = " update Produto nome=?, descricao=?, ean=?, categoria=?, preco=?, ativo=? where id=?";
+			String query = " update Produto set nome=?, descricao=?, ean=?, categoria=?, preco=?, ativo=? where id=?";
 			PreparedStatement preparedStmt = getConn().prepareStatement(query);
 			preparedStmt.setString(1, this.vo.getNome());
 			preparedStmt.setString(2, this.vo.getDescricao());
@@ -163,6 +165,7 @@ public class ProdutoDAO extends BaseDAO implements IDao {
 			preparedStmt.execute();
 			fechar();
 		} catch (Exception e) {
+			System.out.println("[LOAD] ERROR - edit Produto" + e.getMessage());
 		}
 	}
 	@Override

@@ -54,10 +54,10 @@
 							<td><c:out value="${itemProduto.ativo}" /></td>
 							<td>
 								<div class="btn-group">
-									<a class="btn btn-dark"	Href="EditarProduto?id=<c:out value = "${itemProduto.codigo}"/>">
+									<a class="btn btn-dark"	Href="EditarProduto?codigo=<c:out value = "${itemProduto.codigo}"/>">
 										<i class="bi bi-pencil-square"></i>
 									</a> 
-									<a class="btn btn-danger" Href="ApagarProduto?id=<c:out value = "${itemProduto.codigo}"/>">
+									<a class="btn btn-danger" Href="ApagarProduto?codigo=<c:out value = "${itemProduto.codigo}"/>">
 										<i class="bi bi-trash"></i>
 									</a>
 								</div>
