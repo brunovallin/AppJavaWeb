@@ -1,20 +1,55 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
     pageEncoding="ISO-8859-1"%>
+<%@ taglib uri="http://java.sun.com/jstl/core" prefix="c"%>
+<%@page import="VO.Pedido"%>
 <!DOCTYPE html>
 <html>
 <head>
-<meta charset="ISO-8859-1">
-<title>Cadastro de Pedidos</title>
+	<meta charset="ISO-8859-1">
+	<title>Cadastro de Pedidos</title>
+	<link
+		href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css"
+		rel="stylesheet"
+		integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3"
+		crossorigin="anonymous" />
+	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.3/font/bootstrap-icons.css">
 </head>
-<body>
-	<form action="CadastroPedido" method="post">
-		<h1>Cadastro de Pedidos</h1>
-		Código do Pedido: <input type="text" name="codigoPedido" id="codigoPedido" /> <br />
-		Cliente: <input type="text" name="cliente" id="cliente" /> <br />
-		Vendedor: <input type="text" name="vendedor" id="vendedor" /> <br />
-		Produto: <input type="text" name="produto" id="produto" /> <br />		
-		<br />
-		<a href="ListaPedido.jsp">Pesquisar</a> <input type="submit" value="Enviar" />
-	</form>
+
+<body style="background-color: #072227">
+	<div class="container">
+		<div class="card container mt-5" style="background-color: #35858b">
+			<div class="card-body">
+				<h3 class="card-title" style="color: white">Cadastro de Cargo</h3>
+				<h6 class="card-subtitle mb-2 text-muted mt-3"
+					style="color: black !important">Preencha os campos abaixo</h6>
+				<div class="container card" style="background-color: #4fbdba">
+				
+					<form action="CadastroPedido" method="post" class="card-body mt-5 mb-2">
+						<div class="d-flex justify-content-between">
+							<input type="hidden" name="codigoPedido" id="codigoPedido" value="<c:out value='${vo.codigoPedido}'/>">
+							<div class="input-group item-group-sm mb-3 mx-4">
+								<span class="input-group-text" ><i class="bi bi-tag-fill"></i></span> 
+								<input class="form-control" type="text" name="cliente" value="<c:out value='${vo.cliente}'/>" id="cliente" placeholder="Cliente" required/>
+							</div>
+							<div class="input-group item-group-sm mb-3 mx-4">
+								<label class="input-group-text" for="name"><i class="bi bi-file-text-fill"></i></label> 
+								<input class="form-control" type="text" name="vendedor" id="vendedor" placeholder="Vendedor"value="<c:out value='${vo.vendedor}'/>" /> 
+							</div>
+							<div class="input-group item-group-sm mb-3 mx-4">
+								<label class="input-group-text" for="name"><i class="bi bi-file-text-fill"></i></label> 
+								<input class="form-control" type="text" name="produto" id="produto" placeholder="Produto"value="<c:out value='${vo.produto}'/>" /> 
+							</div>
+						</div>
+						<div class="d-flex justify-content-end mb-3 me-4">
+							<div class="btn-group">
+								<a class="btn btn-outline-dark" href=pesquisaPorNome()>Pesquisar</a>
+								<button class="btn btn-dark" type="submit" >Enviar</button>
+							</div>
+						</div>
+					</form>
+				</div>
+			</div>
+		</div>
+	</div>
 </body>
 </html>

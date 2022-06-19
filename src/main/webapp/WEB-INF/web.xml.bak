@@ -11,6 +11,18 @@
   	<servlet-class>servlet.CadastroProduto</servlet-class>
   </servlet>
   <servlet>
+  	<servlet-name>ListaPedido</servlet-name>
+  	<display-name>ListaPedido</display-name>
+  	<description></description>
+  	<servlet-class>servlet.ListaPedido</servlet-class>
+  </servlet>
+  <servlet>
+  	<servlet-name>CadastroPedido</servlet-name>
+  	<display-name>CadastroPedido</display-name>
+  	<description></description>
+  	<servlet-class>servlet.CadastroPedido</servlet-class>
+  </servlet>
+  <servlet>
   	<servlet-name>ListaProduto</servlet-name>
   	<display-name>ListaProduto</display-name>
   	<description></description>
