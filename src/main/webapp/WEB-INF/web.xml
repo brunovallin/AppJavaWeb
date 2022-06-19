@@ -99,6 +99,18 @@
   	<description></description>
   	<servlet-class>servlet.EditarCargo</servlet-class>
   </servlet>
+  <servlet>
+  	<servlet-name>ApagarCliente</servlet-name>
+  	<display-name>ApagarCliente</display-name>
+  	<description></description>
+  	<servlet-class>servlet.ApagarCliente</servlet-class>
+  </servlet>
+  <servlet>
+  	<servlet-name>EditarCliente</servlet-name>
+  	<display-name>EditarCliente</display-name>
+  	<description></description>
+  	<servlet-class>servlet.EditarCliente</servlet-class>
+  </servlet>
   <servlet-mapping>
   	<servlet-name>CadastroProduto</servlet-name>
   	<url-pattern>/CadastroProduto</url-pattern>
@@ -162,6 +174,14 @@
   <servlet-mapping>
   	<servlet-name>EditarCargo</servlet-name>
   	<url-pattern>/EditarCargo</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+  	<servlet-name>ApagarCliente</servlet-name>
+  	<url-pattern>/ApagarCliente</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+  	<servlet-name>EditarCliente</servlet-name>
+  	<url-pattern>/EditarCliente</url-pattern>
   </servlet-mapping>
 
 

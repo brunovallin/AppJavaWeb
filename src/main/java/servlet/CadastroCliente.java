@@ -8,6 +8,9 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import DAO.ClienteDAO;
+import VO.Cliente;
+
 /**
  * Servlet implementation class CadastroCliente
  */
@@ -26,19 +29,54 @@ public class CadastroCliente extends HttpServlet {
 	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		// TODO Auto-generated method stub		
-		response.setContentType("text/html");
-		PrintWriter out = response.getWriter();
-		out.println("Registro Incluido com sucesso");
-		out.close();
+		Cliente vo = new Cliente();
+		vo.setCodigo(Integer.parseInt(request.getParameter("id") != null?request.getParameter("id"):"0"));
+		vo.setNome(request.getParameter("nome"));
+		vo.setEmail(request.getParameter("email"));
+		vo.setTelefone(request.getParameter("telefone"));
+		vo.setEndereco(request.getParameter("endereco"));
+		vo.setBairro(request.getParameter("bairro"));
+		vo.setCidade(request.getParameter("cidade"));
+		vo.setCep(request.getParameter("cep"));
+		vo.setCpf(request.getParameter("cpf"));
+		
+		request.getRequestDispatcher(request.getServletPath().concat(".jsp")).forward(request, response);
 	}
 
 	/**
 	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		// TODO Auto-generated method stub
-		doGet(request, response);
+		PrintWriter out = response.getWriter();
+		Cliente vo = new Cliente();
+		vo.setCodigo(Integer.parseInt(request.getParameter("codigo") != null?request.getParameter("codigo"):"0"));
+		vo.setNome(request.getParameter("nome"));
+		vo.setEmail(request.getParameter("email"));
+		vo.setTelefone(request.getParameter("telefone"));
+		vo.setEndereco(request.getParameter("endereco"));
+		vo.setBairro(request.getParameter("bairro"));
+		vo.setCidade(request.getParameter("cidade"));
+		vo.setCep(request.getParameter("cep"));
+		vo.setCpf(request.getParameter("cpf"));
+		vo.setAtivo(Boolean.parseBoolean(request.getParameter("ativo")));
+		
+	    ClienteDAO dao = new ClienteDAO(vo);
+		try {
+			response.setContentType("text/html");
+			if(vo.getCodigo() > 0) {
+				dao.edit();
+				out.println("Registro alterado com sucesso!");
+			}
+			else{
+				dao.save();
+				out.println("Registro incluído com sucesso!");
+			}
+
+			out.close();
+		} catch (Exception e) {
+			// TODO Auto-generated catch block
+			out.println(e);
+		}
 	}
 
 }
