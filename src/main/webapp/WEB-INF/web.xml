@@ -87,6 +87,18 @@
   	<display-name>Home</display-name>
   	<servlet-class>servlet.Home</servlet-class>
   </servlet>
+  <servlet>
+  	<servlet-name>ApagarCargo</servlet-name>
+  	<display-name>ApagarCargo</display-name>
+  	<description></description>
+  	<servlet-class>servlet.ApagarCargo</servlet-class>
+  </servlet>
+  <servlet>
+  	<servlet-name>EditarCargo</servlet-name>
+  	<display-name>EditarCargo</display-name>
+  	<description></description>
+  	<servlet-class>servlet.EditarCargo</servlet-class>
+  </servlet>
   <servlet-mapping>
   	<servlet-name>CadastroProduto</servlet-name>
   	<url-pattern>/CadastroProduto</url-pattern>
@@ -142,6 +154,14 @@
   <servlet-mapping>
   	<servlet-name>Home</servlet-name>
   	<url-pattern>/Home</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+  	<servlet-name>ApagarCargo</servlet-name>
+  	<url-pattern>/ApagarCargo</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+  	<servlet-name>EditarCargo</servlet-name>
+  	<url-pattern>/EditarCargo</url-pattern>
   </servlet-mapping>
 
 

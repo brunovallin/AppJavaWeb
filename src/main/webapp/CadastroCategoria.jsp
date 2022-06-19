@@ -50,8 +50,10 @@
 		<div class="card container mt-5" style="background-color: #35858b">
 			<div class="card-body">
 				<h3 class="card-title" style="color: white">Cadastro de Categoria</h3>
+				
 				<h6 class="card-subtitle mb-2 text-muted mt-3"
-					style="color: black !important">Preencha os campos abaixo</h6>
+					style="color: black !important">Preencha os campos abaixo
+				</h6>
 				<div class="container card" style="background-color: #4fbdba">
 					<form action="CadastroCategoria" method="post" class="card-body mt-5 mb-2">
 						<div class="d-flex justify-content-between">

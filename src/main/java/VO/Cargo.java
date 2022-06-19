@@ -7,8 +7,6 @@ public class Cargo {
 	
 	private String observacao;
 	
-	private boolean ativo;
-	
 	public int getCodigo() {
 		return codigo;
 	}
@@ -26,11 +24,5 @@ public class Cargo {
 	}
 	public void setObservacao(String observacao) {
 		this.observacao = observacao;
-	}
-	public boolean isAtivo() {
-		return ativo;
-	}
-	public void setAtivo(boolean ativo) {
-		this.ativo = ativo;
 	}
 }
