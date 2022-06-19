@@ -111,6 +111,18 @@
   	<description></description>
   	<servlet-class>servlet.EditarCliente</servlet-class>
   </servlet>
+  <servlet>
+  	<servlet-name>ApagarColaborador</servlet-name>
+  	<display-name>ApagarColaborador</display-name>
+  	<description></description>
+  	<servlet-class>servlet.ApagarColaborador</servlet-class>
+  </servlet>
+  <servlet>
+  	<servlet-name>EditarColaborador</servlet-name>
+  	<display-name>EditarColaborador</display-name>
+  	<description></description>
+  	<servlet-class>servlet.EditarColaborador</servlet-class>
+  </servlet>
   <servlet-mapping>
   	<servlet-name>CadastroProduto</servlet-name>
   	<url-pattern>/CadastroProduto</url-pattern>
@@ -182,6 +194,14 @@
   <servlet-mapping>
   	<servlet-name>EditarCliente</servlet-name>
   	<url-pattern>/EditarCliente</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+  	<servlet-name>ApagarColaborador</servlet-name>
+  	<url-pattern>/ApagarColaborador</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+  	<servlet-name>EditarColaborador</servlet-name>
+  	<url-pattern>/EditarColaborador</url-pattern>
   </servlet-mapping>
 
 

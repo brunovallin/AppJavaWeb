@@ -8,6 +8,11 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import DAO.CategoriaDAO;
+import DAO.ColaboradorDAO;
+import VO.Categoria;
+import VO.Colaborador;
+
 /**
  * Servlet implementation class CadastroColaborador
  */
@@ -26,19 +31,45 @@ public class CadastroColaborador extends HttpServlet {
 	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		// TODO Auto-generated method stub		
-		response.setContentType("text/html");
-		PrintWriter out = response.getWriter();
-		out.println("Registro Incluido com sucesso");
-		out.close();
+		Colaborador vo = new Colaborador();
+		vo.setCodigo(Integer.parseInt(request.getParameter("codigo") != null?request.getParameter("codigo"):"0"));
+		vo.setNome(request.getParameter("nome"));
+		vo.setCargo(request.getParameter("cargo"));
+		vo.setEmail(request.getParameter("email"));
+		vo.setObservacao(request.getParameter("observacao"));
+		vo.setAtivo(Boolean.parseBoolean(request.getParameter("ativo")));
+		request.getRequestDispatcher(request.getServletPath().concat(".jsp")).forward(request, response);
 	}
 
 	/**
 	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		// TODO Auto-generated method stub
-		doGet(request, response);
+		PrintWriter out = response.getWriter();
+		Colaborador vo = new Colaborador();
+		vo.setCodigo(Integer.parseInt((request.getParameter("codigo") == null || request.getParameter("codigo").isBlank()) ?"0":request.getParameter("codigo")));
+		vo.setNome( request.getParameter("nome"));
+	    vo.setCargo( request.getParameter("cargo"));
+	    vo.setEmail( request.getParameter("email"));
+	    vo.setObservacao( request.getParameter("observacao"));
+	    vo.setAtivo(Boolean.parseBoolean(request.getParameter("ativo")));
+	    ColaboradorDAO dao = new ColaboradorDAO(vo);
+		try {
+			response.setContentType("text/html");
+			if(vo.getCodigo() > 0) {
+				dao.edit();
+				out.println("Registro alterado com sucesso!");
+			}
+			else{
+				dao.save();
+				out.println("Registro incluído com sucesso!");
+			}
+
+			out.close();
+		} catch (Exception e) {
+			// TODO Auto-generated catch block
+			out.println(e);
+		}
 	}
 
 }
