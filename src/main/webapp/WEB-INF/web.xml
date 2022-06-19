@@ -135,6 +135,30 @@
   	<description></description>
   	<servlet-class>servlet.EditarProduto</servlet-class>
   </servlet>
+  <servlet>
+  	<servlet-name>ListaPedido</servlet-name>
+  	<display-name>ListaPedido</display-name>
+  	<description></description>
+  	<servlet-class>servlet.ListaPedido</servlet-class>
+  </servlet>
+  <servlet>
+  	<servlet-name>ApagarPedido</servlet-name>
+  	<display-name>ApagarPedido</display-name>
+  	<description></description>
+  	<servlet-class>servlet.ApagarPedido</servlet-class>
+  </servlet>
+  <servlet>
+  	<servlet-name>EditarPedido</servlet-name>
+  	<display-name>EditarPedido</display-name>
+  	<description></description>
+  	<servlet-class>servlet.EditarPedido</servlet-class>
+  </servlet>
+  <servlet>
+  	<servlet-name>CadastroPedido</servlet-name>
+  	<display-name>CadastroPedido</display-name>
+  	<description></description>
+  	<servlet-class>servlet.CadastroPedido</servlet-class>
+  </servlet>
   <servlet-mapping>
   	<servlet-name>CadastroProduto</servlet-name>
   	<url-pattern>/CadastroProduto</url-pattern>
@@ -223,6 +247,20 @@
   	<servlet-name>EditarProduto</servlet-name>
   	<url-pattern>/EditarProduto</url-pattern>
   </servlet-mapping>
-
-
+  <servlet-mapping>
+  	<servlet-name>ListaPedido</servlet-name>
+  	<url-pattern>/ListaPedido</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+  	<servlet-name>ApagarPedido</servlet-name>
+  	<url-pattern>/ApagarPedido</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+  	<servlet-name>EditarPedido</servlet-name>
+  	<url-pattern>/EditarPedido</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+  	<servlet-name>CadastroPedido</servlet-name>
+  	<url-pattern>/CadastroPedido</url-pattern>
+  </servlet-mapping>
 </web-app>

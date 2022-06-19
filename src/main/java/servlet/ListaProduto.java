@@ -41,7 +41,7 @@ public class ListaProduto extends HttpServlet {
 			} else {
 				request.setAttribute("listaProduto", dao.findProdutos(nome));	
 			}
-			request.getRequestDispatcher("/ListaProduto.jsp").forward(request, response);
+			request.getRequestDispatcher("/ListaPedido.jsp").forward(request, response);
 		}catch (Exception e) {
 			out.print(e.getMessage());
 		}

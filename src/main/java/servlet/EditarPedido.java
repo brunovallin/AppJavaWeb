@@ -2,29 +2,27 @@ package servlet;
 
 import java.io.IOException;
 import java.io.PrintWriter;
-import java.util.ArrayList;
-import java.util.Arrays;
 
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-
+import DAO.CargoDAO;
 import DAO.PedidoDAO;
+import VO.Cargo;
 import VO.Pedido;
 
 /**
- * Servlet implementation class ListaPedido
+ * Servlet implementation class EditarPedido
  */
-public class ListaPedido extends HttpServlet {
+public class EditarPedido extends HttpServlet {
 	private static final long serialVersionUID = 1L;
-	private String id;
        
     /**
      * @see HttpServlet#HttpServlet()
      */
-    public ListaPedido() {
+    public EditarPedido() {
         super();
         // TODO Auto-generated constructor stub
     }
@@ -33,21 +31,20 @@ public class ListaPedido extends HttpServlet {
 	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		//TODO Auto-generated method stub
-		PedidoDAO dao = new PedidoDAO();
-		
+		System.out.println("Chamou editar");
+		// TODO Auto-generated method stub
 		PrintWriter out = response.getWriter();
-		id = request.getParameter("nome");
-
+		Pedido vo = new Pedido();
 		try {
-			if ( id == null || id.isEmpty()) {
-				request.setAttribute("listaPedido", dao.getPedidos());
-			} else {
-				request.setAttribute("listaPedido", dao.findPedidos(id));	
-			}
-			request.getRequestDispatcher("/ListaPedido.jsp").forward(request, response);
-		}catch (Exception e) {
-			out.print(e.getMessage());
+			vo.setCodigoPedido(Integer.parseInt(request.getParameter("codigoPedido")));
+			PedidoDAO dao = new PedidoDAO(vo);
+			dao.load();
+			request.setAttribute("vo", dao.getVo());
+			request.getRequestDispatcher("/CadastroPedido.jsp").forward(request, response);
+
+		} catch (Exception e) {
+			// TODO Auto-generated catch block
+			out.println(e.getMessage());
 		}
 	}
 

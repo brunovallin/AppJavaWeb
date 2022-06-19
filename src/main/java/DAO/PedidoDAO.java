@@ -41,7 +41,9 @@ public class PedidoDAO extends BaseDAO implements IDao {
 			lst.add(pedido);
 		}
 		s.close();
-		rs.close();		
+		rs.close();
+		
+		
 		fechar();
 		return lst;
 	}
@@ -145,7 +147,8 @@ public class PedidoDAO extends BaseDAO implements IDao {
 			PreparedStatement preparedStmt = getConn().prepareStatement(query);
 			preparedStmt.setInt (1, this.vo.getCliente());
 			preparedStmt.setInt (2, this.vo.getVendedor());
-			preparedStmt.setInt(3, this.vo.getProduto()); 
+			preparedStmt.setInt(3, this.vo.getProduto());
+			preparedStmt.setInt(4, this.vo.getCodigoPedido()); 
 			preparedStmt.execute();
 			fechar();
 		} catch (Exception e) {
