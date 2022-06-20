@@ -1,7 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
     pageEncoding="ISO-8859-1"%>
 <%@ taglib uri="http://java.sun.com/jstl/core" prefix="c"%>
-<%@page import="VO.Categoria"%>
+<%@page import="VO.Cliente"%>
 <!DOCTYPE html>
 <html>
 <head>
@@ -18,7 +18,7 @@
 	<div class="container">
 		<div class="card container mt-5" style="background-color: #35858b">
 			<div class="card-body">
-				<h3 class="card-title" style="color: white">Cadastro de Categoria</h3>
+				<h3 class="card-title" style="color: white">Cadastro de Cliente</h3>
 				
 				<h6 class="card-subtitle mb-2 text-muted mt-3"
 					style="color: black !important">Preencha os campos abaixo
