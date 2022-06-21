@@ -52,10 +52,12 @@ public class CadastroCargo extends HttpServlet {
 			if(vo.getCodigo() > 0) {
 				dao.edit();
 				out.println("Registro alterado com sucesso!");
+				out.println("<a href='ListaCargo'>Voltar</a>");
 			}
 			else {
 				dao.save();
 				out.println("Registro incluído com sucesso!");
+				out.println("<a href='ListaCargo'>Voltar</a>");
 			}
 
 			out.close();

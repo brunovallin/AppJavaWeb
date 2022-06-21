@@ -33,13 +33,13 @@ public class CadastroProduto extends HttpServlet {
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		Produto vo = new Produto();
-		vo.setCodigo(Integer.parseInt(request.getParameter("codigo") != null?request.getParameter("codigo"):"0"));
+		vo.setCodigo(Integer.parseInt((request.getParameter("codigo") == null || request.getParameter("codigo").isBlank()) ?"0":request.getParameter("codigo")));
 		vo.setNome(request.getParameter("nome"));
 		vo.setDescricao(request.getParameter("descricao"));
-		vo.setEan(Long.parseLong(request.getParameter("ean")));
-		vo.setCategoria(request.getParameter("categoria"));
-		vo.setPreco(Double.parseDouble(request.getParameter("preco")));
-		vo.setAtivo(Boolean.parseBoolean(request.getParameter("ativo")));
+		vo.setEan(Integer.parseInt((request.getParameter("ean") == null || request.getParameter("ean").isBlank()) ?"0":request.getParameter("ean")));
+	    vo.setCategoria( request.getParameter("categoria"));
+	    vo.setPreco(Double.parseDouble((request.getParameter("preco") == null || request.getParameter("preco").isBlank()) ?"0":request.getParameter("preco")));
+	    vo.setAtivo(Boolean.parseBoolean(request.getParameter("ativo")));
 		request.getRequestDispatcher(request.getServletPath().concat(".jsp")).forward(request, response);
 	}
 
@@ -53,9 +53,9 @@ public class CadastroProduto extends HttpServlet {
 		vo.setCodigo(Integer.parseInt((request.getParameter("codigo") == null || request.getParameter("codigo").isBlank()) ?"0":request.getParameter("codigo")));
 		vo.setNome(request.getParameter("nome"));
 		vo.setDescricao(request.getParameter("descricao"));
-	    vo.setEan(Long.parseLong(request.getParameter("ean")));
+		vo.setEan(Integer.parseInt((request.getParameter("ean") == null || request.getParameter("ean").isBlank()) ?"0":request.getParameter("ean")));
 	    vo.setCategoria( request.getParameter("categoria"));
-	    vo.setPreco(Double.parseDouble(request.getParameter("preco")));
+	    vo.setPreco(Double.parseDouble((request.getParameter("preco") == null || request.getParameter("preco").isBlank()) ?"0":request.getParameter("preco")));
 	    vo.setAtivo(Boolean.parseBoolean(request.getParameter("ativo")));
 	    ProdutoDAO dao = new ProdutoDAO(vo);
 		try {
@@ -63,10 +63,12 @@ public class CadastroProduto extends HttpServlet {
 			if(vo.getCodigo() > 0) {
 				dao.edit();
 				out.println("Registro alterado com sucesso!");
+				out.println("<a href='ListaProduto'>Voltar</a>");
 			}
 			else{
 				dao.save();
 				out.println("Registro incluído com sucesso!");
+				out.println("<a href='ListaProduto'>Voltar</a>");
 			}
 
 			out.close();

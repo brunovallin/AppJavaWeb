@@ -26,6 +26,36 @@
 	<link rel="stylesheet" href="css/global.css"/>
 </head>
 <body>
+	<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+      <div class="container-fluid">
+        <a class="navbar-brand-lg btn-dark" href="/PrimeiroApp/Home"><i class="bi bi-house-fill"></i></a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+          <ul class="navbar-nav">
+            <li class="nav-item">
+              <a class="nav-link" href="CadastroCategoria">Categoria</a>
+            </li>
+            <li class="nav-item">
+               <a class="nav-link" href="CadastroCliente">Cliente</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="CadastroColaborador">Colaborador</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="CadastroCargo">Cargo</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="CadastroPedido">Pedido</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="CadastroProduto">Produto</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
 
 	<div class="card-body">
 		<div class="table-responsive">

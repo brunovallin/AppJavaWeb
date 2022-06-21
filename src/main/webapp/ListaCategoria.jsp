@@ -26,27 +26,36 @@
 </head>
 <body style="background-color: #072227">
 
-	<nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
-	  	<div class="container-fluid">
-	    	<a class="navbar-brand-lg btn-dark" href="/PrimeiroApp/Home"><i class="bi bi-house-fill"></i></a>
-	    	<button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-	      		<span class="navbar-toggler-icon"></span>
-	    	</button>
-	    	<div class="collapse navbar-collapse" id="navbarNav">
-	      		<ul class="navbar-nav">
-	        		<li class="nav-item">
-	          			<a class="nav-link" href="CadastroCategoria" style="color: white">Categoria</a>
-	        		</li>
-	        		<li class="nav-item">
-	          			<a class="nav-link" href="CadastroProduto">Produto</a>
-	        		</li>
-	        		<li class="nav-item">
-	          			<a class="nav-link" href="#">Pricing</a>
-	        		</li>
-	      		</ul>
-	    	</div>
-	  	</div>
-	</nav>
+	<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+      <div class="container-fluid">
+        <a class="navbar-brand-lg btn-dark" href="/PrimeiroApp/Home"><i class="bi bi-house-fill"></i></a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+          <ul class="navbar-nav">
+            <li class="nav-item">
+              <a class="nav-link" href="CadastroCategoria">Categoria</a>
+            </li>
+            <li class="nav-item">
+               <a class="nav-link" href="CadastroCliente">Cliente</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="CadastroColaborador">Colaborador</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="CadastroCargo">Cargo</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="CadastroPedido">Pedido</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="CadastroProduto">Produto</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
 	<div class="card container mt-5" style="background-color: #35858b">
 	<div class="card-header">
 		<h1 class="card-title"style="color: white">Lista de Categoria</h1>
@@ -60,8 +69,8 @@
 				<tr>
 					<th class="col-1" scope="col">#</th>
 					<th class="col-3" scope="col">Nome</th>
-					<th class="col-5" scope="col">Descriï¿½ï¿½o</th>
-					<th class="col-2" scope="col">Opï¿½ï¿½es</th>
+					<th class="col-5" scope="col">Descrição</th>
+					<th class="col-2" scope="col">Ações</th>
 				</tr>
 			</thead>
 			<tbody class="">

@@ -33,9 +33,9 @@ public class CadastroPedido extends HttpServlet {
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		Pedido vo = new Pedido();
 		vo.setCodigoPedido(Integer.parseInt(request.getParameter("codigoPedido") != null?request.getParameter("codigoPedido"):"0"));
-		vo.setCliente(Integer.parseInt(request.getParameter("cliente")));
-		vo.setVendedor(Integer.parseInt(request.getParameter("vendedor")));
-		vo.setProduto(Integer.parseInt(request.getParameter("produto")));
+		vo.setCliente(Integer.parseInt(request.getParameter("cliente")!= null?request.getParameter("cliente"):"0"));
+		vo.setVendedor(Integer.parseInt(request.getParameter("vendedor")!= null?request.getParameter("vendedor"):"0"));
+		vo.setProduto(Integer.parseInt(request.getParameter("produto")!= null?request.getParameter("produto"):"0"));
 		request.getRequestDispatcher(request.getServletPath().concat(".jsp")).forward(request, response);
 	}
 
@@ -55,10 +55,12 @@ public class CadastroPedido extends HttpServlet {
 			if(vo.getCodigoPedido() > 0) {
 				dao.edit();
 				out.println("Registro alterado com sucesso!");
+				out.println("<a href='ListaPedido'>Voltar</a>");
 			}
 			else {
 				dao.save();
 				out.println("Registro incluído com sucesso!");
+				out.println("<a href='ListaPedido'>Voltar</a>");
 			}
 
 			out.close();

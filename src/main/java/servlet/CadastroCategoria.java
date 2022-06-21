@@ -52,10 +52,12 @@ public class CadastroCategoria extends HttpServlet {
 			if(vo.getId() > 0) {
 				dao.edit();
 				out.println("Registro alterado com sucesso!");
+				out.println("<a href='ListaCategoria'>Voltar</a>");
 			}
 			else{
 				dao.save();
 				out.println("Registro incluído com sucesso!");
+				out.println("<a href='ListaCategoria'>Voltar</a>");
 			}
 
 			out.close();
